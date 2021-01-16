@@ -32,7 +32,7 @@ class Number
     return $returnValue;
   }
 
-  public function loop(int $start, int $end)
+  public function loop(int $start, int $end): string
   {
     $numbersList = [];
     for ($i = $start; $i < $end; $i++) {

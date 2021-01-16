@@ -6,6 +6,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\SingleCommandApplication;
+use App\Number;
 
 $application = new SingleCommandApplication();
 $application->setName('app:fizz-buzz')
@@ -13,7 +14,10 @@ $application->setName('app:fizz-buzz')
   ->setDescription('Create a Fizz Buzz test whith Single Command Application of Symfony')
   ->setAutoExit(false)
   ->setCode(function (InputInterface $input, OutputInterface $output) {
-    $output->write('Execute command');
+
+    $number = new Number();
+    $output->write($number->loop(1, 101));
+
     return SingleCommandApplication::SUCCESS;
   })
   ->run();

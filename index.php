@@ -12,6 +12,7 @@ use Symfony\Component\Console\SingleCommandApplication;
   ->setName('app:fizz-buzz')
   ->setVersion('1.0.0')
   ->setDescription('Create a Fizz Buzz test whith Single Command Application of Symfony')
+  ->setAutoExit(false)
   ->setCode(function (InputInterface $input, OutputInterface $output) {
     $output->writeln('Execute command');
     return SingleCommandApplication::SUCCESS;
